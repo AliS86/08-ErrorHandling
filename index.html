@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="errApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ali | Error Handling</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/styles.css">
+    <!-- endinject -->
+</head>
+
+<body ng-controller="MainController as vm">
+    <!-- print a striped table -->
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+        </tr>
+        <!-- print out the array -->
+        <tr ng-repeat="data in vm.topspots">
+            <td>{{data.name}}</td>
+            <td>{{data.description}}</td>
+            <td><a href="https://www.google.com/maps?q= + {{data.location[0]}} + {{data.location[1]}} " <button type="button" class="btn btn-info">Open Goole Maps</a></td>
+        </tr>
+    </table>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/main.controller.js"></script>
+    <script src="/app/main.factory.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
